@@ -22,5 +22,5 @@ jobs:
           accuknox_tenant: 3730
           accuknox_token: "${{ secrets.ACCUKNOX_TOKEN }}"
           accuknox_label: "SPOC"
-          input_soft_fail: true
+          input_soft_fail: false
           upload_artifact: true
