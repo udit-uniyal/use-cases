@@ -23,3 +23,9 @@ jobs:
           quiet: "true"
           label: "tests"
           soft_fail: true
+
+      - name: Upload IaC Scan Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: accuknox-iac-scan-results
+          path: ./results
