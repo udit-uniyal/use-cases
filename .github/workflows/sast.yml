@@ -15,9 +15,8 @@ jobs:
       - name: Accuknox SAST
         uses: accuknox/sast-scan-opengrep-action@1.0.0
         with:
-          token: ${{ secrets.ACCUKNOX_TOKEN }}
-          endpoint: "cspm.demo.accuknox.com"
-          tenant_id: 3730
-          quiet: "true"
-          label: "SPOC"
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          accuknox_endpoint: "cspm.demo.accuknox.com"
+          accuknox_tenant: 3730
+          accuknox_label: "SPOC"
           input_soft_fail: false
