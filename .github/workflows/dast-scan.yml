@@ -1,4 +1,4 @@
-name: AccuKnox dast Scan Workflow
+name: AccuKnox DAST Scan Workflow
 
 on:
   push:
@@ -6,19 +6,18 @@ on:
       - dast
 
 jobs:
-  dast-scan:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
-      - name: Run AccuKnox DAST Scan
+      - name: Accuknox DAST
         uses: accuknox/dast-scan-action@v1.0.0
         with:
-          target_url: "http://testphp.vulnweb.com/"
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           accuknox_endpoint: "cspm.demo.accuknox.com"
           tenant_id: 3730
-          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           label: "SPOC"
-          severity_threshold: "High"
-          scan_type: "baseline"
+          target_url: "http://testphp.vulnweb.com/"
+          scan_type: "baseline"          
