@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Accuknox IaC
-        uses: accuknox/iac-scan-action@v0.0.1
+        uses: ./action.yaml
         with:
           directory: ./
           output_file_path: ./results
